@@ -9,7 +9,7 @@ void FillArray(double[] arrayColection)
     Console.Write($"Числа массива: ");
     while (index < arrayColection.Length)
     {
-        arrayColection[index] = new Random().Next(1 , 11);
+        arrayColection[index] = new Random().Next(1, 11);
 
         Console.Write($" {arrayColection[index]}");
         index++;
@@ -19,25 +19,28 @@ void FillArray(double[] arrayColection)
 void PrintArray(double[] arrayColection)
 {
     int index = 0;
-    double difference=0;
+    double difference = 0;
     double max = 0;
-    double min =10;
     while (index < arrayColection.Length)
     {
-        if(arrayColection[index]>max)
+        if (arrayColection[index] > max)
         {
             max = arrayColection[index];
         }
         index++;
     }
-    while(index < arrayColection.Length)
+    Console.WriteLine($"MAX: {max}");
+    double min = max;
+    index = 0;
+    while (index < arrayColection.Length)
     {
-        if(arrayColection[index]<max)
+        if (arrayColection[index] < min)
         {
             min = arrayColection[index];
         }
         index++;
     }
+    Console.WriteLine($"MIN: {min}");
     difference = max - min;
     Console.Write($"Разница между максимальным и минимальным числом: {difference}");
 }
